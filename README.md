@@ -3,7 +3,8 @@
 - To deal with class imbalance
 	* Weighted Binary Cross Entropy Loss 
 	* Weighted Random Sampler
-- Add ResNet18 for faster training
+- Support ResNet18 for faster training
+- Support plotting ROC curve
 - [Download pre-trained model](https://drive.google.com/file/d/1jKkooB02JSRBukjM1Hx8AEi6_jg-9Evg/view?usp=sharing)
 ---
 Yet another PyTorch implementation of the [CheXNet](https://arxiv.org/abs/1711.05225) algorithm for pathology detection in 
