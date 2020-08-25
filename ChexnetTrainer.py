@@ -78,7 +78,26 @@ class ChexnetTrainer ():
         #-------------------- SETTINGS: DATASET BUILDERS
         datasetTrain = DatasetGenerator(pathImageDirectory=pathDirData, pathDatasetFile=pathFileTrain, transform=transformSequence)
         datasetVal =   DatasetGenerator(pathImageDirectory=pathDirData, pathDatasetFile=pathFileVal, transform=transformSequence)
-              
+        
+        #--WeightedRandomSampler
+        # targets =[]
+        # for batchID, (input, target) in enumerate (datasetTrain):
+        #     # print(target)
+        #     targets.append(target)
+
+        # # print('\n', targets[10][0])
+        # class_sample_count = np.array([3993, 249]) # 0, 1
+        # weight = 1. / class_sample_count
+        # samples_weight = np.array([weight[int(t[0].numpy())] for t in targets])
+        # samples_weight = torch.from_numpy(samples_weight)
+        # sampler = torch.utils.data.WeightedRandomSampler(samples_weight.type('torch.DoubleTensor'), len(samples_weight))
+
+        #--End of WeightedRandomSampler
+        
+        # uncomment this to apply sampler
+        # dataLoaderTrain = DataLoader(dataset=datasetTrain, batch_size=trBatchSize, shuffle=False,  \
+        #     num_workers=24, \
+        #     sampler=sampler, pin_memory=True)
         dataLoaderTrain = DataLoader(dataset=datasetTrain, batch_size=trBatchSize, shuffle=True,  num_workers=24, pin_memory=True)
         dataLoaderVal = DataLoader(dataset=datasetVal, batch_size=trBatchSize, shuffle=False, num_workers=24, pin_memory=True)
         
