@@ -56,3 +56,6 @@ The highest accuracy 0.8508 was achieved by the model m-25012018-123527 (see the
 ## Computation time
 The training was done using single Tesla P100 GPU and took approximately 22h.
 
+## Credits
+This repo is modified upon this great [CheXNet](https://github.com/basicskywards/chexnet).
+
